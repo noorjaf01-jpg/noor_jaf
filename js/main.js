@@ -245,75 +245,62 @@ const projects = [
   }
 ];
 
-function renderSkillPanel(index) {
-  const cat = skills[index];
-  const panel = document.getElementById('skillsPanel');
-  const icon = SKILL_ICONS[cat.title] || '';
-
-  panel.innerHTML = `
-    <div class="skills-panel-inner">
-      <div class="skills-panel-header">
-        <div class="skills-panel-icon">${icon}</div>
-        <div>
-          <h3>${cat.title}</h3>
-          <p class="skills-panel-count">${cat.tags.length} technologies</p>
-        </div>
-      </div>
-      <div class="skill-tags">
-        ${cat.tags.map(tag => {
-          const isWide = tag.length > 42;
-          return `<span class="skill-tag${isWide ? ' skill-tag--wide' : ''}">${tag}</span>`;
-        }).join('')}
-      </div>
-    </div>
-  `;
-
-  panel.classList.remove('skills-panel--enter');
-  void panel.offsetWidth;
-  panel.classList.add('skills-panel--enter');
-}
-
-function initSkillsNav() {
-  const nav = document.getElementById('skillsNav');
-  let activeIndex = 0;
-
-  nav.innerHTML = skills.map((cat, i) => `
-    <button
-      type="button"
-      class="skills-nav-btn${i === 0 ? ' active' : ''}"
-      data-index="${i}"
-      role="tab"
-      aria-selected="${i === 0}"
-    >
-      <span class="skills-nav-icon">${SKILL_ICONS[cat.title] || ''}</span>
-      <span class="skills-nav-label">${cat.title}</span>
-      <span class="skills-nav-count">${cat.tags.length}</span>
-    </button>
-  `).join('');
-
-  nav.querySelectorAll('.skills-nav-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const index = parseInt(btn.dataset.index, 10);
-      if (index === activeIndex) return;
-
-      activeIndex = index;
-      nav.querySelectorAll('.skills-nav-btn').forEach(b => {
-        const isActive = parseInt(b.dataset.index, 10) === index;
-        b.classList.toggle('active', isActive);
-        b.setAttribute('aria-selected', isActive);
-      });
-      renderSkillPanel(index);
-    });
-  });
-
-  renderSkillPanel(0);
-}
-
 function renderSkills() {
   const highlights = document.getElementById('skillsHighlights');
+  const accordion = document.getElementById('skillsAccordion');
+
   highlights.innerHTML = SKILL_HIGHLIGHTS.map(tag =>
     `<span class="skill-highlight">${tag}</span>`
   ).join('');
+
+  accordion.innerHTML = skills.map((cat, i) => {
+    const icon = SKILL_ICONS[cat.title] || '';
+    const tagsHtml = cat.tags.map(tag =>
+      `<span class="skill-tag">${tag}</span>`
+    ).join('');
+
+    return `
+      <div class="skill-accordion-item${i === 0 ? ' is-open' : ''}">
+        <button
+          type="button"
+          class="skill-accordion-trigger"
+          aria-expanded="${i === 0}"
+        >
+          <span class="skill-accordion-icon">${icon}</span>
+          <span class="skill-accordion-title">${cat.title}</span>
+          <span class="skill-accordion-count">${cat.tags.length}</span>
+          <svg class="skill-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="skill-accordion-body">
+          <div class="skill-accordion-inner">
+            <div class="skill-tags">${tagsHtml}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function initSkillsAccordion() {
+  const accordion = document.getElementById('skillsAccordion');
+  if (!accordion) return;
+
+  accordion.querySelectorAll('.skill-accordion-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.skill-accordion-item');
+      const isOpen = item.classList.contains('is-open');
+
+      accordion.querySelectorAll('.skill-accordion-item').forEach(el => {
+        el.classList.remove('is-open');
+        el.querySelector('.skill-accordion-trigger').setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
 }
 
 function renderExperience() {
@@ -386,12 +373,23 @@ function initNav() {
     });
   });
 
+  function setMenuOpen(open) {
+    links.classList.toggle('open', open);
+    toggle.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', open);
+    document.body.classList.toggle('menu-open', open);
+  }
+
   toggle.addEventListener('click', () => {
-    links.classList.toggle('open');
+    setMenuOpen(!links.classList.contains('open'));
   });
 
   links.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => links.classList.remove('open'));
+    link.addEventListener('click', () => setMenuOpen(false));
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) setMenuOpen(false);
   });
 }
 
@@ -469,7 +467,7 @@ document.addEventListener('DOMContentLoaded', () => {
   applyProfileLinks();
   initTheme();
   renderSkills();
-  initSkillsNav();
+  initSkillsAccordion();
   renderExperience();
   renderProjects();
   initNav();
