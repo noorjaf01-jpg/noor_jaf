@@ -4,9 +4,9 @@ const PROFILE = {
   phone: '(617) 239-9919',
   phoneTel: '+16172399919',
   location: 'Dallas, TX, 75051, USA',
-  github: 'https://github.com/noorjaf01',
-  linkedin: 'https://www.linkedin.com/in/noorbismajaf',
-  linkedinDisplay: 'linkedin.com/in/noorbismajaf',
+  github: 'https://github.com/noorjaf01-jpg',
+  linkedin: 'https://linkedin.com/in/noor-bisma-b97192367',
+  linkedinDisplay: 'linkedin.com/in/noor-bisma-b97192367',
   resume: 'assets/Noor_Bisma_Jaf_Resume.pdf',
   resumeFilename: 'Noor_Bisma_Jaf_Resume.pdf',
   get gmailCompose() {
