@@ -12,7 +12,7 @@ const SKILL_ICONS = {
   'Cloud Platforms': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>',
   'Databases & NoSQL': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"/></svg>',
   'DevOps, MLOps & CI/CD': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>',
-  'Data Governance, Quality & Security': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+  'Data Governance & Security': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
   'Healthcare Data Engineering': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
   'BI & Analytics': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
   'Project Management & Collaboration': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
@@ -47,8 +47,8 @@ const skills = [
     title: 'Data Architecture & Modeling',
     tags: [
       'Lakehouse Architecture', 'Data Vault', 'Kimball & Inmon', 'Star & Snowflake Schemas',
-      'Bronze/Silver/Gold architecture', 'Dimensional Modeling', 'Semantic Layer',
-      'Domain-Driven Design', 'Data Marts', 'Warehouses'
+      'Bronze/Silver/Gold Architecture', 'Dimensional Modeling', 'Semantic Layer',
+      'Domain-Driven Design', 'Data Mesh Architecture', 'Data Products', 'Data Platform Modernization'
     ]
   },
   {
@@ -56,7 +56,8 @@ const skills = [
     tags: [
       'Snowflake', 'Databricks Delta Lake & Unity Catalog', 'Apache Iceberg', 'Apache Hudi',
       'Redshift', 'BigQuery', 'Azure Synapse Analytics', 'Hive', 'Presto', 'Trino',
-      'Parquet', 'ORC', 'Avro', 'Palantir Ontology & Data Products'
+      'Parquet', 'ORC', 'Avro', 'Palantir Ontology & Data Products',
+      'Databricks Workflows', 'Delta Live Tables', 'Databricks SQL'
     ]
   },
   {
@@ -64,7 +65,8 @@ const skills = [
     tags: [
       'AWS (S3, Glue, EMR, Lambda, Redshift, Athena, Kinesis, CloudFormation)',
       'Azure (Data Factory, Synapse, Databricks, Event Hubs, Blob Storage, Logic Apps, Key Vault)',
-      'GCP (BigQuery, Dataflow, Pub/Sub, Composer, Cloud Functions)'
+      'GCP (BigQuery, Dataflow, Pub/Sub, Composer, Cloud Functions)',
+      'Microsoft Fabric', 'OneLake', 'Azure Purview'
     ]
   },
   {
@@ -83,10 +85,11 @@ const skills = [
     ]
   },
   {
-    title: 'Data Governance, Quality & Security',
+    title: 'Data Governance & Security',
     tags: [
       'HIPAA', 'GDPR', 'SOC 2', 'PHI/PII Masking', 'RBAC/ABAC', 'Data Lineage',
-      'Cataloging', 'Palantir Governance Workflows', 'Audit Logging', 'Encryption', 'Data Quality Frameworks'
+      'Cataloging', 'Palantir Governance Workflows', 'Audit Logging', 'Encryption',
+      'Data Quality Frameworks', 'Data Observability', 'Data Reliability Engineering', 'Data Governance Automation'
     ]
   },
   {
@@ -105,13 +108,6 @@ const skills = [
     ]
   },
   {
-    title: 'Project Management & Collaboration',
-    tags: [
-      'Agile & Scrum', 'Jira', 'Confluence', 'Trello', 'Asana', 'Microsoft Project',
-      'Stakeholder Management', 'Solution Architecture', 'Technical Mentorship', 'DataOps', 'Documentation'
-    ]
-  },
-  {
     title: 'Data Modernization & Innovation',
     tags: [
       'Cloud Migration Strategy', 'Legacy System Modernization', 'Data Mesh Implementation', 'Self-Service Analytics Enablement'
@@ -121,7 +117,15 @@ const skills = [
     title: 'AI & ML Enablement',
     tags: [
       'ML Pipeline Development', 'Feature Store Design', 'Model Deployment',
-      'Data for Predictive Analytics', 'Integration with LLM/AI workflows'
+      'Integration with LLM/AI workflows', 'RAG Pipelines', 'Vector Database Integration',
+      'LLM Data Preparation', 'AI-Ready Data Platforms'
+    ]
+  },
+  {
+    title: 'Project Management & Collaboration',
+    tags: [
+      'Agile & Scrum', 'Jira', 'Confluence', 'Trello', 'Asana', 'Microsoft Project',
+      'Stakeholder Management', 'Solution Architecture', 'Technical Mentorship', 'DataOps', 'Documentation'
     ]
   }
 ];
@@ -130,17 +134,16 @@ const experience = [
   {
     title: 'Enterprise Data Engineer',
     company: 'Aequor',
-    date: '11/2022 – Present',
+    date: 'November 2022 – Present',
     bullets: [
-      'Architected and deployed enterprise-scale healthcare data pipelines integrating EHR, claims, lab, pharmacy, and operational datasets into a unified analytics ecosystem supporting clinical and operational insights.',
-      'Designed and implemented HIPAA-compliant ETL/ELT workflows using Azure Data Factory, Databricks, and Palantir Foundry, automating sensitive PHI/PII processing and reducing manual data handling.',
-      'Built lakehouse architecture on Databricks and Delta Lake to support structured and semi-structured healthcare data, enabling faster and more reliable analytics and reporting.',
-      'Engineered batch and near real-time ingestion frameworks for multiple healthcare source systems, ensuring timely availability of data for analytics dashboards.',
-      'Developed curated clinical and operational data marts, enabling data-driven decision-making for executive, clinical, and operational teams.',
-      'Implemented robust data governance and lineage frameworks, including metadata management, automated validation, and auditing for compliance with regulatory standards.',
-      'Optimized data transformations, storage, and query performance, reducing cloud compute costs and improving pipeline efficiency.',
-      'Partnered with cross-functional teams (clinical, analytics, and business stakeholders) to translate requirements into scalable, maintainable, and reliable data solutions.',
-      'Established CI/CD pipelines for automated deployment, monitoring, version control, and operational excellence across production workflows.'
+      'Architected and deployed enterprise healthcare data pipelines integrating 25+ EHR, claims, laboratory, pharmacy, and operational data sources into a unified analytics ecosystem, enabling scalable clinical and operational insights across business teams.',
+      'Engineered HIPAA-compliant ETL/ELT workflows using Azure Data Factory, Databricks, and Palantir Foundry, automating PHI/PII processing for millions of healthcare records and reducing manual data preparation efforts by 40%.',
+      'Designed and implemented Databricks and Delta Lake lakehouse architecture processing multi-terabyte healthcare datasets, improving analytics scalability by 35% and increasing availability of trusted enterprise data.',
+      'Developed batch and near real-time ingestion frameworks supporting 50+ data pipelines, reducing data latency from hours to minutes for clinical reporting and analytics use cases.',
+      'Built curated clinical and operational data marts supporting 100+ analytical datasets, improving reporting consistency and enabling faster decision-making for clinical and business stakeholders.',
+      'Established enterprise data governance, lineage, and validation frameworks across multiple healthcare domains, improving data quality compliance and reducing production data issues by 30%.',
+      'Optimized Spark transformations, Delta Lake storage strategies, and query execution processes, achieving 25–30% improvement in pipeline performance while reducing unnecessary cloud compute consumption.',
+      'Partnered with clinical, analytics, and business teams across multiple departments to translate requirements into scalable data solutions, accelerating delivery of enterprise analytics capabilities.'
     ],
     keywords: [
       'Healthcare Data Engineering', 'HIPAA', 'PHI/PII', 'Azure', 'Databricks', 'Delta Lake',
@@ -151,16 +154,16 @@ const experience = [
   {
     title: 'Senior Data Engineer',
     company: 'Nesco Resource',
-    date: '03/2019 – 10/2022',
+    date: 'March 2019 – October 2022',
     bullets: [
-      'Led end-to-end enterprise data engineering projects for analytics, reporting, and machine learning initiatives, providing highly reliable, scalable, and performant data pipelines.',
-      'Designed and orchestrated ETL/ELT pipelines using Apache Airflow, dbt, and Python to ingest, transform, and load large-scale datasets into cloud-based warehouses.',
-      'Built real-time streaming pipelines leveraging Kafka and event-driven architecture to support low-latency operational dashboards and analytics.',
-      'Developed reusable and scalable data models for BI, reporting, and ML consumption, improving maintainability and engineering productivity.',
-      'Implemented data quality frameworks, automated anomaly detection, and monitoring dashboards to ensure reliable production workflows.',
-      'Mentored junior engineers, conducted design and code reviews, and enforced best practices for scalable and maintainable data architecture.',
-      'Collaborated with product, analytics, and business teams to translate strategic objectives into actionable data solutions.',
-      'Ensured high availability and reliability of production data systems with automated alerting, monitoring, and failure recovery mechanisms.'
+      'Led enterprise data engineering initiatives supporting analytics, reporting, and ML workloads, designing scalable platforms processing millions of records across multiple business domains.',
+      'Designed and orchestrated ETL/ELT pipelines using Airflow, dbt, and Python, managing 100+ automated workflows and improving data processing efficiency through pipeline optimization.',
+      'Engineered Kafka-based streaming pipelines processing high-volume event data, reducing analytics latency by 50% and enabling near real-time operational dashboards.',
+      'Developed reusable enterprise data models supporting 50+ reporting and analytics use cases, improving maintainability and reducing development effort across teams.',
+      'Implemented automated data quality frameworks and anomaly detection processes, improving dataset reliability by 35% and reducing downstream reporting issues.',
+      'Mentored junior engineers and conducted architecture and code reviews, improving engineering standards and increasing overall team productivity.',
+      'Collaborated with product, analytics, and business teams supporting multiple enterprise initiatives, translating requirements into production-ready data solutions.',
+      'Enhanced monitoring, alerting, and recovery mechanisms across production workflows, improving system availability and reducing operational incidents.'
     ],
     keywords: [
       'Apache Airflow', 'dbt', 'Kafka', 'Python', 'Spark', 'ETL/ELT', 'Streaming Data',
@@ -171,15 +174,15 @@ const experience = [
   {
     title: 'Big Data Engineer',
     company: 'Matlen Silver',
-    date: '07/2016 – 02/2019',
+    date: 'July 2016 – February 2019',
     bullets: [
-      'Engineered distributed big data pipelines using Apache Spark and PySpark to process high-volume transactional and event-driven datasets across multiple business domains.',
-      'Developed batch and near real-time ingestion frameworks integrating structured and semi-structured datasets into cloud storage layers.',
-      'Built scalable data lake solutions on AWS and Azure using Parquet and Delta formats to optimize storage, retrieval, and query performance.',
-      'Tuned Spark workloads by optimizing partitioning, caching, and query execution strategies, improving pipeline performance and reliability.',
-      'Integrated multiple enterprise data sources into centralized cloud platforms to enable downstream analytics, reporting, and machine learning applications.',
-      'Developed automated CI/CD pipelines and collaborated with DevOps teams for seamless deployment of production workflows.',
-      'Monitored pipelines for data anomalies, performance issues, and bottlenecks, ensuring high availability and minimal downtime.'
+      'Engineered distributed Spark and PySpark pipelines processing terabytes of transactional and event-driven data, supporting enterprise analytics workloads at scale.',
+      'Developed batch and near real-time ingestion frameworks integrating 20+ structured and semi-structured data sources into scalable cloud data platforms.',
+      'Built AWS and Azure data lake solutions using Parquet and Delta formats, improving storage efficiency by 30% and enhancing analytical query performance across workloads.',
+      'Optimized Spark workloads through partitioning, caching, and execution tuning, reducing processing time by 35% for large-scale data transformation jobs.',
+      'Integrated enterprise data sources into centralized analytics platforms supporting multiple downstream reporting and machine learning applications.',
+      'Automated CI/CD deployment workflows for production data applications, reducing manual deployment effort and improving release consistency across environments.',
+      'Monitored and tuned production pipelines handling high-volume workloads, improving reliability and minimizing workflow failures in critical data systems.'
     ],
     keywords: [
       'Big Data', 'Apache Spark', 'PySpark', 'AWS', 'Azure', 'Databricks', 'Delta Lake',
@@ -189,15 +192,15 @@ const experience = [
   {
     title: 'Data Engineer',
     company: 'Visionaire Partners',
-    date: '06/2014 – 06/2016',
+    date: 'June 2014 – June 2016',
     bullets: [
-      'Designed and developed ETL/ELT pipelines to ingest, transform, and load structured and semi-structured datasets into cloud-based analytics platforms.',
-      'Integrated data from APIs, relational databases, and flat files, creating standardized transformations across multiple business domains.',
-      'Developed reusable data transformation logic for consistent, high-quality datasets supporting BI and analytics initiatives.',
-      'Translated business requirements into scalable, production-ready data models and pipelines for enterprise reporting.',
-      'Optimized data workflows to reduce processing time and improve data reliability for business intelligence teams.',
-      'Implemented automated monitoring, logging, and validation to ensure pipeline accuracy and production stability.',
-      'Collaborated with DevOps and analytics teams to establish CI/CD pipelines, enabling smooth deployment and version control.'
+      'Designed and developed ETL/ELT pipelines integrating 15+ data sources into analytics platforms, improving availability and reliability of trusted business data.',
+      'Integrated APIs, relational databases, and flat-file sources, standardizing transformation workflows and reducing manual data preparation overhead by 30%.',
+      'Developed reusable transformation frameworks supporting multiple reporting solutions, improving consistency and significantly accelerating analytics delivery timelines.',
+      'Translated business requirements into scalable data models and production pipelines, enabling faster delivery of enterprise reporting capabilities across teams.',
+      'Optimized SQL queries and data workflows, improving processing performance by 25% and increasing reliability of analytics operations for business stakeholders.',
+      'Implemented automated monitoring, logging, and validation processes, reducing data quality issues and improving stability across production environments.',
+      'Established CI/CD practices with DevOps teams, improving deployment consistency and reducing release cycle turnaround time across data engineering projects.'
     ],
     keywords: [
       'Data Engineering', 'ETL/ELT', 'Python', 'SQL', 'Cloud Platforms', 'Data Pipelines',
@@ -208,39 +211,43 @@ const experience = [
 
 const projects = [
   {
-    title: 'Healthcare Data Lakehouse Platform',
+    title: 'Enterprise Healthcare Lakehouse & AI-Ready Analytics Platform',
     stack: 'Databricks, Delta Lake, Azure, Palantir Foundry, Python, SQL',
     bullets: [
-      'Architected HIPAA-compliant lakehouse integrating EHR, claims, and lab datasets for unified analytics.',
-      'Built ETL/ELT pipelines and real-time ingestion workflows, improving reporting speed and reliability.',
-      'Implemented data marts, governance, lineage, and automated quality checks for audit-ready compliance.'
+      'Architected a HIPAA-compliant enterprise lakehouse integrating EHR, claims, laboratory, pharmacy, and operational data sources into governed, analytics-ready datasets.',
+      'Engineered scalable ETL/ELT pipelines and near real-time ingestion workflows to process high-volume healthcare data, improving data availability and accelerating clinical analytics.',
+      'Designed curated healthcare data marts, governance frameworks, lineage tracking, and automated quality validation processes to deliver trusted, audit-ready datasets for AI/ML initiatives.',
+      'Developed AI-ready data foundations by standardizing complex healthcare datasets, improving accessibility for predictive modeling and machine learning workflows.'
     ]
   },
   {
     title: 'Real-Time Financial Risk & Fraud Analytics Platform',
     stack: 'Apache Kafka, Spark Structured Streaming, Azure Event Hubs, Snowflake, Databricks, Python',
     bullets: [
-      'Developed real-time streaming pipelines using Kafka and Spark Structured Streaming for anomaly detection.',
-      'Designed ETL/ELT workflows integrating financial datasets into Snowflake and Databricks.',
-      'Built data quality monitoring and ML-ready datasets for predictive fraud analytics.'
+      'Engineered real-time streaming pipelines using Kafka and Spark Structured Streaming to process high-volume transactional events and support low-latency fraud analytics at scale.',
+      'Designed scalable cloud data workflows integrating financial datasets into Snowflake and Databricks environments for analytics, reporting, and machine learning consumption.',
+      'Implemented automated data quality monitoring and validation frameworks, improving reliability of financial datasets and strengthening confidence in analytical insights.',
+      'Built ML-ready analytical datasets supporting predictive fraud detection, anomaly analysis, and advanced risk management capabilities across business teams.'
     ]
   },
   {
-    title: 'Big Data Processing & Analytics Platform',
+    title: 'Enterprise Big Data Processing & Cloud Analytics Platform',
     stack: 'Apache Spark, PySpark, Delta Lake, AWS, Azure, Parquet, Python',
     bullets: [
-      'Engineered distributed Spark/PySpark pipelines to process terabytes of transactional and event-driven data.',
-      'Implemented batch and near real-time ingestion frameworks across AWS and Azure.',
-      'Built centralized data lakes and warehouses, optimized storage formats, and enabled ML-ready analytics.'
+      'Designed and optimized distributed Spark/PySpark processing frameworks to handle large-scale transactional and event-driven datasets across enterprise cloud environments.',
+      'Developed scalable cloud data lake architectures using AWS and Azure services, improving data processing efficiency, storage optimization, and analytical query performance.',
+      'Implemented batch and near real-time ingestion pipelines supporting diverse structured and semi-structured data workloads with high reliability.',
+      'Optimized data storage formats, Spark execution strategies, and transformation workflows to improve scalability and enable ML-ready analytics platforms.'
     ]
   },
   {
-    title: 'Enterprise Analytics & Reporting Platform',
+    title: 'Enterprise Data Analytics & Self-Service Reporting Platform',
     stack: 'Python, SQL, ETL/ELT, Airflow, Databricks, Snowflake, CI/CD',
     bullets: [
-      'Developed scalable ETL/ELT pipelines for structured and semi-structured enterprise data.',
-      'Built reusable transformation logic for cross-business standardization and improved reliability.',
-      'Designed data models and CI/CD pipelines for BI dashboards and automated production workflows.'
+      'Built scalable enterprise ETL/ELT frameworks to integrate structured and semi-structured datasets into analytics platforms supporting business intelligence initiatives.',
+      'Developed reusable transformation pipelines and enterprise data models improving data consistency, reliability, and accessibility across reporting environments.',
+      'Designed automated workflow orchestration and CI/CD deployment processes to improve production reliability and streamline analytics delivery across teams.',
+      'Enabled self-service analytics by delivering governed datasets and optimized data models for BI dashboards and executive reporting across multiple business units.'
     ]
   }
 ];
