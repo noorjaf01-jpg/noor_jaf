@@ -11,8 +11,10 @@
   <link rel="stylesheet" href="css/style.css" />
   <script>
     (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
       var t = localStorage.getItem('theme');
-      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      if (t === 'light' || t === 'dark') root.setAttribute('data-theme', t);
     })();
   </script>
 </head>

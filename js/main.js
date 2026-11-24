@@ -332,14 +332,20 @@ function renderProjects() {
 function initTheme() {
   const toggle = document.getElementById('themeToggle');
   const root = document.documentElement;
+  let switchTimer = 0;
 
   function getTheme() {
     return root.getAttribute('data-theme') || 'dark';
   }
 
   function setTheme(theme) {
+    root.classList.add('theme-switching');
     root.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
+    window.clearTimeout(switchTimer);
+    switchTimer = window.setTimeout(() => {
+      root.classList.remove('theme-switching');
+    }, 380);
   }
 
   if (!localStorage.getItem('theme')) {
@@ -392,14 +398,23 @@ function initNav() {
 }
 
 function initReveal() {
-  const revealSelectors = '.reveal, .reveal-left, .reveal-right, .reveal-scale, .stat-card, .cert-card, .contact-card';
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const revealSelectors = '.reveal, .reveal-left, .reveal-right, .reveal-scale, .stat-card, .cert-card, .contact-card, .project-card, .timeline-item, .education-card';
   const timeline = document.querySelector('.timeline');
+
+  if (reduceMotion.matches) {
+    document.querySelectorAll(revealSelectors).forEach(el => el.classList.add('visible'));
+    if (timeline) timeline.classList.add('visible');
+    document.querySelectorAll('.about-stats').forEach(el => initCounters(el));
+    return;
+  }
 
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
           if (entry.target.classList.contains('about-stats')) {
             initCounters(entry.target);
           }
@@ -409,30 +424,37 @@ function initReveal() {
         }
       });
     },
-    { threshold: 0.12, rootMargin: '0px 0px -50px 0px' }
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
   );
-
-  document.querySelectorAll(revealSelectors).forEach(el => observer.observe(el));
-  document.querySelectorAll('.about-stats').forEach(el => observer.observe(el));
-  if (timeline) observer.observe(timeline);
 
   document.querySelectorAll('.cert-card').forEach((el, i) => {
     el.classList.add('reveal-scale');
     el.style.setProperty('--delay', i);
-    observer.observe(el);
   });
 
   document.querySelectorAll('.contact-card').forEach((el, i) => {
     el.classList.add('reveal');
-    el.style.setProperty('--delay', i + 2);
-    observer.observe(el);
+    el.style.setProperty('--delay', i + 1);
   });
 
   document.querySelectorAll('.stat-card').forEach((el, i) => {
     el.classList.add('reveal-scale');
     el.style.setProperty('--delay', i);
-    observer.observe(el);
   });
+
+  document.querySelectorAll('.project-card').forEach((el, i) => {
+    el.classList.add('reveal-right');
+    el.style.setProperty('--delay', i);
+  });
+
+  document.querySelectorAll('.timeline-item').forEach((el, i) => {
+    el.classList.add('reveal-left');
+    el.style.setProperty('--delay', i);
+  });
+
+  document.querySelectorAll(revealSelectors).forEach(el => observer.observe(el));
+  document.querySelectorAll('.about-stats').forEach(el => observer.observe(el));
+  if (timeline) observer.observe(timeline);
 }
 
 function initCounters(container) {
