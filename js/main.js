@@ -461,6 +461,29 @@ function initCounters(container) {
   });
 }
 
+function initCardTilt() {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const coarsePointer = window.matchMedia('(pointer: coarse)');
+  if (reduceMotion.matches || coarsePointer.matches) return;
+
+  document.querySelectorAll('.project-card, .cert-card').forEach((card) => {
+    card.classList.add('tilt-ready');
+    card.addEventListener('pointermove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      card.style.setProperty('--tilt-x', `${((0.5 - y) * 6).toFixed(2)}deg`);
+      card.style.setProperty('--tilt-y', `${((x - 0.5) * 8).toFixed(2)}deg`);
+      card.style.setProperty('--shine-x', `${(x * 100).toFixed(1)}%`);
+      card.style.setProperty('--shine-y', `${(y * 100).toFixed(1)}%`);
+    });
+    card.addEventListener('pointerleave', () => {
+      card.style.setProperty('--tilt-x', '0deg');
+      card.style.setProperty('--tilt-y', '0deg');
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   applyProfileLinks();
   initTheme();
@@ -470,8 +493,5 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProjects();
   initNav();
   initReveal();
-  if (window.NBVisuals) {
-    window.NBVisuals.initHeroScene();
-    window.NBVisuals.initCardTilt();
-  }
+  initCardTilt();
 });
