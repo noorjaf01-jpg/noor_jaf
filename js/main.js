@@ -470,4 +470,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProjects();
   initNav();
   initReveal();
+  if (window.NBVisuals) {
+    window.NBVisuals.initHeroScene();
+    window.NBVisuals.initCardTilt();
+  }
 });
