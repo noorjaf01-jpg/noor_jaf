@@ -132,18 +132,18 @@ const skills = [
 
 const experience = [
   {
-    title: 'Enterprise Data Engineer',
+    title: 'Lead Data Engineer',
     company: 'Aequor',
     date: 'November 2022 – Present',
     bullets: [
-      'Architected and deployed enterprise healthcare data pipelines integrating 25+ EHR, claims, laboratory, pharmacy, and operational data sources into a unified analytics ecosystem, enabling scalable clinical and operational insights across business teams.',
-      'Engineered HIPAA-compliant ETL/ELT workflows using Azure Data Factory, Databricks, and Palantir Foundry, automating PHI/PII processing for millions of healthcare records and reducing manual data preparation efforts by 40%.',
-      'Designed and implemented Databricks and Delta Lake lakehouse architecture processing multi-terabyte healthcare datasets, improving analytics scalability by 35% and increasing availability of trusted enterprise data.',
-      'Developed batch and near real-time ingestion frameworks supporting 50+ data pipelines, reducing data latency from hours to minutes for clinical reporting and analytics use cases.',
-      'Built curated clinical and operational data marts supporting 100+ analytical datasets, improving reporting consistency and enabling faster decision-making for clinical and business stakeholders.',
-      'Established enterprise data governance, lineage, and validation frameworks across multiple healthcare domains, improving data quality compliance and reducing production data issues by 30%.',
+      'Architected and led enterprise healthcare data pipelines integrating 25+ EHR, claims, laboratory, pharmacy, and operational data sources into a unified analytics ecosystem, enabling scalable clinical and operational insights across business teams.',
+      'Engineered and standardized HIPAA-compliant ETL/ELT workflows using Azure Data Factory, Databricks, and Palantir Foundry, automating PHI/PII processing for millions of healthcare records and reducing manual data preparation efforts by 40%.',
+      'Designed and implemented a scalable Databricks and Delta Lake lakehouse architecture processing multi-terabyte healthcare datasets, improving analytics scalability by 35% and increasing availability of trusted enterprise data.',
+      'Established batch and near real-time ingestion frameworks supporting 50+ production data pipelines, reducing data latency from hours to minutes for clinical reporting and analytics use cases.',
+      'Delivered curated clinical and operational data marts supporting 100+ analytical datasets, strengthening reporting consistency and accelerating data-driven decision-making for clinical and business stakeholders.',
+      'Governed and enhanced enterprise data lineage, validation, and quality frameworks across multiple healthcare domains, improving compliance and reducing production data issues by 30%.',
       'Optimized Spark transformations, Delta Lake storage strategies, and query execution processes, achieving 25–30% improvement in pipeline performance while reducing unnecessary cloud compute consumption.',
-      'Partnered with clinical, analytics, and business teams across multiple departments to translate requirements into scalable data solutions, accelerating delivery of enterprise analytics capabilities.'
+      'Drove cross-functional technical delivery with clinical, analytics, and business teams across multiple departments, translating complex requirements into scalable data solutions and accelerating enterprise analytics capabilities.'
     ],
     keywords: [
       'Healthcare Data Engineering', 'HIPAA', 'PHI/PII', 'Azure', 'Databricks', 'Delta Lake',
@@ -211,43 +211,34 @@ const experience = [
 
 const projects = [
   {
-    title: 'Enterprise Healthcare Lakehouse & AI-Ready Analytics Platform',
-    stack: 'Databricks, Delta Lake, Azure, Palantir Foundry, Python, SQL',
+    title: 'Patient 360 & Clinical Data Intelligence Platform',
+    stack: 'Azure Databricks, Delta Lake, Palantir Foundry, HIPAA, Python, SQL',
     bullets: [
-      'Architected a HIPAA-compliant enterprise lakehouse integrating EHR, claims, laboratory, pharmacy, and operational data sources into governed, analytics-ready datasets.',
-      'Engineered scalable ETL/ELT pipelines and near real-time ingestion workflows to process high-volume healthcare data, improving data availability and accelerating clinical analytics.',
-      'Designed curated healthcare data marts, governance frameworks, lineage tracking, and automated quality validation processes to deliver trusted, audit-ready datasets for AI/ML initiatives.',
-      'Developed AI-ready data foundations by standardizing complex healthcare datasets, improving accessibility for predictive modeling and machine learning workflows.'
+      'Architected a unified Patient 360 platform integrating EHR, claims, laboratory, and pharmacy data from 25+ sources into trusted clinical datasets.',
+      'Engineered scalable ingestion and transformation workflows using Azure Databricks, Delta Lake, and Palantir Foundry to standardize millions of healthcare records.',
+      'Implemented HIPAA-aligned PHI/PII controls, automated validation, and data lineage to strengthen compliance and clinical data integrity.',
+      'Enabled curated datasets for population health analytics, risk stratification, patient-outcome analysis, and downstream AI/ML workflows.',
+      'Key Achievements: Integrated 25+ healthcare data sources, reduced manual data preparation by 40%, and contributed to 30% fewer production data-quality issues.'
     ]
   },
   {
-    title: 'Real-Time Financial Risk & Fraud Analytics Platform',
-    stack: 'Apache Kafka, Spark Structured Streaming, Azure Event Hubs, Snowflake, Databricks, Python',
+    title: 'Transactional Event Intelligence & Real-Time Decision Engineering',
+    stack: 'Apache Kafka, Apache Spark, Python, Streaming Analytics',
     bullets: [
-      'Engineered real-time streaming pipelines using Kafka and Spark Structured Streaming to process high-volume transactional events and support low-latency fraud analytics at scale.',
-      'Designed scalable cloud data workflows integrating financial datasets into Snowflake and Databricks environments for analytics, reporting, and machine learning consumption.',
-      'Implemented automated data quality monitoring and validation frameworks, improving reliability of financial datasets and strengthening confidence in analytical insights.',
-      'Built ML-ready analytical datasets supporting predictive fraud detection, anomaly analysis, and advanced risk management capabilities across business teams.'
+      'Spearheaded Kafka-based streaming pipelines to transform high-volume transactional events into reliable, analytics-ready datasets.',
+      'Optimized Apache Spark and Python processing workflows to accelerate event ingestion and deliver timely data for operational reporting.',
+      'Standardized event validation and reusable processing components to strengthen data consistency and simplify downstream analytics integration.',
+      'Key Achievements: Reduced analytics latency by 50% and enabled near-real-time operational dashboards for faster decision-making.'
     ]
   },
   {
-    title: 'Enterprise Big Data Processing & Cloud Analytics Platform',
-    stack: 'Apache Spark, PySpark, Delta Lake, AWS, Azure, Parquet, Python',
+    title: 'Governed AI/ML Data Products & Feature Foundation',
+    stack: 'Databricks, Delta Lake, Feature Engineering, Data Governance',
     bullets: [
-      'Designed and optimized distributed Spark/PySpark processing frameworks to handle large-scale transactional and event-driven datasets across enterprise cloud environments.',
-      'Developed scalable cloud data lake architectures using AWS and Azure services, improving data processing efficiency, storage optimization, and analytical query performance.',
-      'Implemented batch and near real-time ingestion pipelines supporting diverse structured and semi-structured data workloads with high reliability.',
-      'Optimized data storage formats, Spark execution strategies, and transformation workflows to improve scalability and enable ML-ready analytics platforms.'
-    ]
-  },
-  {
-    title: 'Enterprise Data Analytics & Self-Service Reporting Platform',
-    stack: 'Python, SQL, ETL/ELT, Airflow, Databricks, Snowflake, CI/CD',
-    bullets: [
-      'Built scalable enterprise ETL/ELT frameworks to integrate structured and semi-structured datasets into analytics platforms supporting business intelligence initiatives.',
-      'Developed reusable transformation pipelines and enterprise data models improving data consistency, reliability, and accessibility across reporting environments.',
-      'Designed automated workflow orchestration and CI/CD deployment processes to improve production reliability and streamline analytics delivery across teams.',
-      'Enabled self-service analytics by delivering governed datasets and optimized data models for BI dashboards and executive reporting across multiple business units.'
+      'Architected governed data products using Databricks and Delta Lake, establishing reusable foundations for predictive analytics and machine learning.',
+      'Engineered feature-ready transformation layers and standardized data models to streamline preparation for predictive modeling and risk analysis.',
+      'Implemented automated validation, lineage tracking, and governed access controls to strengthen data traceability and support reliable AI/ML consumption.',
+      'Key Achievements: Established reusable, governed data products and streamlined feature-ready dataset preparation for predictive analytics and machine learning workflows.'
     ]
   }
 ];

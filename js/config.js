@@ -7,8 +7,8 @@ const PROFILE = {
   website: 'https://noor-bisma-jaf.vercel.app',
   websiteDisplay: 'noor-bisma-jaf.vercel.app',
   github: 'https://github.com/noorjaf01-jpg',
-  linkedin: 'https://linkedin.com/in/noor-bisma-b97192367',
-  linkedinDisplay: 'linkedin.com/in/noor-bisma-b97192367',
+  linkedin: 'https://linkedin.com/in/noor-bisma',
+  linkedinDisplay: 'linkedin.com/in/noor-bisma',
   resume: 'assets/Noor_Bisma_Jaf_Resume.pdf',
   resumeFilename: 'Noor_Bisma_Jaf_Resume.pdf',
   get gmailCompose() {
